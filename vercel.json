@@ -1,7 +1,6 @@
 {
-  "buildCommand": "",
-  "installCommand": "",
   "framework": null,
-  "cleanUrls": false,
-  "trailingSlash": false
+  "buildCommand": "echo 'Static site'",
+  "installCommand": "echo 'No dependencies needed'",
+  "outputDirectory": "."
 }
