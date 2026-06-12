@@ -21,24 +21,12 @@
 html {
   background: var(--background);
   scroll-behavior: smooth;
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.08) 1px,
-    transparent 1px
-  );
-  background-size: 10px 10px;
-  background-attachment: fixed;
   height: 100%;
 }
 
 body {
   margin: 0;
   background: var(--background);
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.08) 1px,
-    transparent 1px
-  );
-  background-size: 10px 10px;
-  background-attachment: fixed;
   color: var(--foreground);
   font-family:
     "Inter",
@@ -588,20 +576,6 @@ h3 {
   background: var(--background);
 }
 
-/* Textura de puntos en secciones */
-.section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.08) 1px,
-    transparent 1px
-  );
-  background-size: 10px 10px;
-  background-attachment: scroll;
-  pointer-events: none;
-}
-
 .section > * {
   position: relative;
   z-index: 1;
@@ -610,6 +584,11 @@ h3 {
 /* EFECTO PARALLAX: Esquinas redondeadas en sección de productos */
 #productos {
   border-radius: 30px 30px 0 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--background) 10%
+  ) !important;
 }
 
 .section-bordered {
@@ -626,21 +605,6 @@ h3 {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 3rem 0;
-}
-
-/* Textura de puntos en banner */
-.banner-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.08) 1px,
-    transparent 1px
-  );
-  background-size: 10px 10px;
-  background-attachment: scroll;
-  pointer-events: none;
-  z-index: 0;
 }
 
 .banner-content {
