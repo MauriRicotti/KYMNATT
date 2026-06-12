@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="es">
+  <!-- ===== HEAD ===== -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#010101" />
+    <title>KYMNATT — Fashion Style</title>
+    <meta
+      name="description"
+      content="KYMNATT. Chalinas y gorritos de lana tejidos a mano para el invierno. Diseño minimalista, abrigo real."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/png" href="public/images/kymnatt-logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <!-- ===== BODY ===== -->
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar" id="navbar">
+      <nav class="nav container">
+        <a href="#inicio" class="nav-logo" aria-label="KYMNATT inicio">
+          <img src="public/images/kymnatt-logo.png" alt="KYMNATT" />
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#nosotros">Quiénes somos</a></li>
+          <li><a href="#info">Envíos</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="#contacto" class="btn-outline nav-contact">Contactar</a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-instagram"
+            aria-label="Instagram KYMNATT"
+          >
+            <i class="bi bi-instagram"></i>
+          </a>
+          <button
+            type="button"
+            class="nav-toggle"
+            id="navToggle"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+          >
+            <svg
+              class="icon-menu"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="4" x2="20" y1="6" y2="6" />
+              <line x1="4" x2="20" y1="12" y2="12" />
+              <line x1="4" x2="20" y1="18" y2="18" />
+            </svg>
+            <svg
+              class="icon-close"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Menú móvil -->
+      <div class="nav-mobile" id="navMobile" hidden>
+        <ul>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#nosotros">Quiénes somos</a></li>
+          <li><a href="#info">Envíos</a></li>
+          <li><a href="#contacto" class="btn-outline">Contactar</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===== HERO SECTION ===== -->
+      <section id="inicio" class="hero-new">
+        <div class="hero-new-content">
+          <img
+            src="public/images/kymnatt-logo.png"
+            alt="KYMNATT"
+            class="hero-new-logo"
+          />
+          <p class="hero-new-subtitle">Chalinas, Gorros y Accesorios</p>
+
+          <div class="hero-new-cta">
+            <a href="#productos" class="btn-hero-primary">Ver Catálogo</a>
+            <a href="#nosotros" class="btn-hero-secondary">Quiénes Somos</a>
+          </div>
+        </div>
+
+        <div class="hero-new-scroll">
+          <span>Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- ===== PRODUCTOS SECTION ===== -->
+      <section id="productos" class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Catálogo</p>
+              <h2 class="section-title">Nuestros productos</h2>
+            </div>
+            <div
+              class="filters"
+              id="filters"
+              role="tablist"
+              aria-label="Filtrar productos"
+            ></div>
+          </div>
+          <div class="product-grid" id="productGrid"></div>
+          <p class="empty-state" id="emptyState" hidden>
+            No hay productos en esta categoría todavía.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== BANNER ANIMADO ===== -->
+      <section class="banner-container">
+        <div class="banner-content">
+          <div class="banner-item">
+            <span class="banner-text">CHALINAS</span>
+            <div class="banner-circle"></div>
+            <span class="banner-text">GORROS</span>
+            <div class="banner-circle"></div>
+            <span class="banner-text">ACCESORIOS</span>
+            <div class="banner-circle"></div>
+            <span class="banner-text">DISEÑO</span>
+            <div class="banner-circle"></div>
+          </div>
+          <div class="banner-item">
+            <span class="banner-text">CHALINAS</span>
+            <div class="banner-circle"></div>
+            <span class="banner-text">GORROS</span>
+            <div class="banner-circle"></div>
+            <span class="banner-text">ACCESORIOS</span>
+            <div class="banner-circle"></div>
+            <span class="banner-text">DISEÑO</span>
+            <div class="banner-circle"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== QUIÉNES SOMOS SECTION ===== -->
+      <section id="nosotros" class="section section-bordered">
+        <div class="container about-grid">
+          <div class="about-image">
+            <img
+              src="public/images/chalina-gris.png"
+              alt="Detalle de tejido de lana KYMNATT"
+            />
+          </div>
+          <div>
+            <p class="eyebrow">Quiénes somos</p>
+            <h2 class="section-title">Lana, oficio y detalle.</h2>
+            <div class="about-text">
+              <p>
+                KYMNATT nace de la pasión por el tejido y por las prendas que
+                realmente abrigan. Cada chalina y cada gorro se hace a mano,
+                cuidando la textura, el calce y la durabilidad.
+              </p>
+              <p>
+                Trabajamos con lanas seleccionadas y una paleta sobria —negro,
+                gris y azul marino— para que cada pieza combine con todo y dure
+                muchos inviernos. Sin prisa, sin producción en masa: solo piezas
+                hechas con dedicación.
+              </p>
+            </div>
+            <dl class="stats">
+              <div>
+                <dt>100%</dt>
+                <dd>Tejido a mano</dd>
+              </div>
+              <div>
+                <dt>+500</dt>
+                <dd>Pedidos enviados</dd>
+              </div>
+              <div>
+                <dt>3</dt>
+                <dd>Años abrigando</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== INFO / CÓMO COMPRAR SECTION ===== -->
+      <section id="info" class="section section-bordered">
+        <div class="container">
+          <div class="info-block">
+            <p class="eyebrow">Cómo comprar</p>
+            <h2 class="section-title">Comprar es simple</h2>
+            <div class="steps-grid">
+              <div class="card step-card">
+                <div class="step-head">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"
+                    />
+                    <path d="M3 6h18" />
+                    <path d="M16 10a4 4 0 0 1-8 0" />
+                  </svg>
+                  <span class="step-num">01</span>
+                </div>
+                <h3>Elige tu pieza</h3>
+                <p>
+                  Explora el catálogo y filtra entre chalinas y gorritos hasta
+                  encontrar tu favorita.
+                </p>
+              </div>
+              <div class="card step-card">
+                <div class="step-head">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                  </svg>
+                  <span class="step-num">02</span>
+                </div>
+                <h3>Escríbenos</h3>
+                <p>
+                  Toca &ldquo;Consultar / Comprar&rdquo; o el botón de contacto
+                  y dinos qué producto quieres.
+                </p>
+              </div>
+              <div class="card step-card">
+                <div class="step-head">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"
+                    />
+                    <path d="M15 18H9" />
+                    <path
+                      d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"
+                    />
+                    <circle cx="17" cy="18" r="2" />
+                    <circle cx="7" cy="18" r="2" />
+                  </svg>
+                  <span class="step-num">03</span>
+                </div>
+                <h3>Coordinamos el envío</h3>
+                <p>
+                  Confirmamos stock, pago y dirección. Preparamos tu pedido y lo
+                  despachamos.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="shipping-grid">
+            <div class="card shipping-card">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"
+                />
+                <path d="M15 18H9" />
+                <path
+                  d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"
+                />
+                <circle cx="17" cy="18" r="2" />
+                <circle cx="7" cy="18" r="2" />
+              </svg>
+              <div>
+                <h3>Envíos a todo el país</h3>
+                <p>
+                  Despachamos por correo o courier. El costo se calcula según tu
+                  región y se coordina al confirmar el pedido.
+                </p>
+              </div>
+            </div>
+            <div class="card shipping-card">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              <div>
+                <h3>Empaque cuidado</h3>
+                <p>
+                  Cada pieza viaja protegida y lista para regalar. Tiempo de
+                  preparación: 2 a 4 días hábiles.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== FAQ SECTION ===== -->
+      <section id="faq" class="section section-bordered">
+        <div class="container">
+          <div>
+            <p class="eyebrow">Preguntas frecuentes</p>
+            <h2 class="section-title">¿Dudas sobre KYMNATT?</h2>
+          </div>
+
+          <div class="faq-grid">
+            <details class="faq-item">
+              <summary class="faq-trigger">
+                <span>¿Cuáles son los tiempos de entrega?</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="faq-content">
+                <p>
+                  El tiempo de preparación es de 2 a 4 días hábiles. Una vez
+                  despachado, el envío tarda entre 3 a 7 días según tu región.
+                  Si necesitas tu pedido con urgencia, avísanos en tu mensaje.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-trigger">
+                <span>¿Cómo es el proceso de compra?</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="faq-content">
+                <p>
+                  Es simple: elige tu pieza en el catálogo, contáctanos por
+                  WhatsApp o email indicando qué producto quieres. Confirmamos
+                  stock y precio, coordinas el pago (transferencia, PayPal o
+                  efectivo en retiro), y nosotros preparamos el envío.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-trigger">
+                <span>¿Qué materiales usan?</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="faq-content">
+                <p>
+                  Usamos lanas de calidad: principalmente lana merino y lana de
+                  oveja nacional. Seleccionamos fibras que sean suaves, durables
+                  y cálidas. Todos nuestros productos son 100% lana, sin mezclas
+                  sintéticas.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-trigger">
+                <span>¿Cómo cuidar una chalina o gorro?</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="faq-content">
+                <p>
+                  Lava a mano con agua fría o tibia y detergente suave
+                  (específico para lana o shampoo). No estrujes, deja secar
+                  plano sobre una toalla. Evita secar al sol directo. Guarda en
+                  un lugar seco. Con estos cuidados, tu pieza durará muchos
+                  años.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-trigger">
+                <span>¿Hacen pedidos personalizados?</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="faq-content">
+                <p>
+                  Sí. Si quieres un color, tamaño o diseño especial,
+                  contáctanos. Podemos cotizar un pedido personalizado. Consulta
+                  directamente por WhatsApp o email para coordinar detalles.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-trigger">
+                <span>¿Tienen cambios o devoluciones?</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="faq-content">
+                <p>
+                  Sí. Si tu pieza llega con defecto de fabricación, hacemos
+                  cambio sin problema. Para cambios por talla o color,
+                  coordinamos contigo. Consulta nuestros términos en detalle
+                  escribiendo a hola@kymnatt.com.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-trigger">
+                <span>¿Hacen envíos internacionales?</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="faq-content">
+                <p>
+                  Por ahora, envíamos a todo Chile. Para consultas de envío
+                  internacional, escríbenos a hola@kymnatt.com y cotizamos según
+                  tu país.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-trigger">
+                <span>¿Cuál es el talles de los gorritos?</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="faq-content">
+                <p>
+                  Nuestros gorritos tienen un talles ajustable y estirables. Se
+                  adaptan a la mayoría de las cabezas sin problema. Si tienes
+                  preocupaciones especiales, confirma con nosotros antes de
+                  comprar.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER SECTION ===== -->
+    <footer id="contacto" class="footer">
+      <div class="container footer-cta">
+        <div>
+          <p class="eyebrow">Contacto</p>
+          <h2 class="section-title">¿Lista tu próxima pieza de invierno?</h2>
+        </div>
+        <div class="footer-buttons">
+          <a
+            href="https://wa.me/56900000000"
+            target="_blank"
+            rel="noreferrer"
+            class="btn-solid"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+            </svg>
+            WhatsApp
+          </a>
+          <a href="mailto:hola@kymnatt.com" class="btn-outline">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+            Email
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <img
+            src="public/images/kymnatt-logo.png"
+            alt="KYMNATT"
+            class="footer-logo"
+          />
+          <p class="footer-copy">
+            © <span id="year"></span> KYMNATT. Tejido a mano con dedicación.
+          </p>
+          <div class="footer-social">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram de KYMNATT"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+            </a>
+            <a
+              href="https://wa.me/56900000000"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="WhatsApp de KYMNATT"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== SCROLL TO TOP BUTTON ===== -->
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Ir al inicio">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
