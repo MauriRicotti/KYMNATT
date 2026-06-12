@@ -1346,3 +1346,18 @@ h3 {
     margin: 0 0 1.5rem;
   }
 }
+
+/* ===== OPTIMIZACIÓN MOBILE: Deshabilitar efectos cuando hero no es visible ===== */
+/* Solo aplica en dispositivos con viewport menor a 768px */
+@media (max-width: 767px) {
+  /* Cuando el hero sale de la vista, deshabilita la textura para ahorrar recursos */
+  .hero-new.hero-out-of-view::before {
+    background-image: none !important;
+    background-color: #000000;
+  }
+
+  /* Deshabilita blur del navbar cuando hero no es visible */
+  .navbar.hero-out-of-view {
+    backdrop-filter: blur(0px);
+  }
+}

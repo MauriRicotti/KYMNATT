@@ -208,3 +208,32 @@ faqItems.forEach((item) => {
     }
   });
 });
+
+/* ===== OPTIMIZACIÓN MOBILE: Intersection Observer para Hero Section ===== */
+/* Detecta si el hero está visible para desabilitar efectos en móvil */
+if (window.innerWidth <= 767) {
+  const heroElement = document.querySelector(".hero-new");
+  const navbarElement = document.getElementById("navbar");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          // Hero está fuera de vista: deshabilita efectos
+          heroElement.classList.add("hero-out-of-view");
+          navbarElement.classList.add("hero-out-of-view");
+        } else {
+          // Hero es visible: restaura efectos
+          heroElement.classList.remove("hero-out-of-view");
+          navbarElement.classList.remove("hero-out-of-view");
+        }
+      });
+    },
+    {
+      threshold: 0, // Dispara cuando hero completamente sale de vista
+    }
+  );
+
+  // Observar el hero element
+  observer.observe(heroElement);
+}
