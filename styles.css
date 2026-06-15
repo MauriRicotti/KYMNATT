@@ -247,18 +247,6 @@ h3 {
   padding: 0;
 }
 
-.nav-links a {
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: var(--muted-foreground);
-  transition: color 0.2s ease;
-}
-
-.nav-links a:hover {
-  color: var(--foreground);
-}
-
 .nav-actions {
   display: flex;
   align-items: center;
@@ -347,6 +335,27 @@ h3 {
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--muted-foreground);
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-mobile a:not(.btn-outline)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: var(--foreground);
+  transition: width 0.3s ease;
+}
+
+.nav-mobile a:not(.btn-outline).active::after {
+  width: 100%;
+}
+
+.nav-mobile a:not(.btn-outline).active {
+  color: var(--foreground);
 }
 
 .nav-mobile a:not(.btn-outline):hover {
@@ -357,6 +366,37 @@ h3 {
   margin-top: 0.5rem;
   align-self: flex-start;
   border-color: rgba(247, 247, 247, 0.8);
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: #ffffff;
+  z-index: 51;
+  transition: width 0.1s linear;
+  width: 0%;
+}
+
+/* ===== ACTIVE NAV LINK UNDERLINE ===== */
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--muted-foreground);
+  transition: color 0.2s ease;
+  position: relative;
+  padding-bottom: 0.25rem;
+}
+
+.nav-links a:hover {
+  color: var(--foreground);
 }
 
 /* ===== HERO SECTION STYLES ===== */
@@ -394,14 +434,14 @@ h3 {
       rgba(255, 255, 255, 0.03) 0px,
       rgba(255, 255, 255, 0.03) 2px,
       transparent 2px,
-      transparent 4px
+      transparent 8px
     ),
     repeating-linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.03) 0px,
       rgba(255, 255, 255, 0.03) 2px,
       transparent 2px,
-      transparent 4px
+      transparent 8px
     ),
     radial-gradient(
       ellipse at 50% 50%,
@@ -617,14 +657,14 @@ h3 {
       rgba(255, 255, 255, 0.03) 0px,
       rgba(255, 255, 255, 0.03) 2px,
       transparent 2px,
-      transparent 4px
+      transparent 8px
     ),
     repeating-linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.03) 0px,
       rgba(255, 255, 255, 0.03) 2px,
       transparent 2px,
-      transparent 4px
+      transparent 8px
     ),
     radial-gradient(
       ellipse at 50% 50%,
@@ -1100,7 +1140,6 @@ h3 {
 }
 
 .payment-link {
-  text-decoration: underline;
   color: var(--foreground);
   cursor: pointer;
   transition: opacity 0.2s ease;

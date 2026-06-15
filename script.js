@@ -136,9 +136,52 @@ renderProducts();
 // ===== Navbar: efecto al hacer scroll - EFECTO PARALLAX ===== 
 const navbar = document.getElementById("navbar");
 const heroNew = document.querySelector(".hero-new"); // EFECTO PARALLAX: Referencia para animaciones
+const progressBar = document.getElementById("progressBar");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+function updateProgressBar() {
+  const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrolled = window.scrollY;
+  const progress = windowHeight > 0 ? (scrolled / windowHeight) * 100 : 0;
+  progressBar.style.width = progress + "%";
+}
+
+function updateActiveNavLink() {
+  let currentSection = "inicio";
+  
+  // Detectar la sección activa según el scroll
+  const sections = document.querySelectorAll("section[id]");
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    
+    if (window.scrollY >= sectionTop - 200) {
+      currentSection = section.getAttribute("id");
+    }
+  });
+  
+  // Actualizar clase active en los enlaces del navbar desktop
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + currentSection) {
+      link.classList.add("active");
+    }
+  });
+  
+  // Actualizar clase active en los enlaces del navbar móvil
+  const mobileNavLinks = document.querySelectorAll(".nav-mobile a:not(.btn-outline)");
+  mobileNavLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + currentSection) {
+      link.classList.add("active");
+    }
+  });
+}
 
 function onScroll() {
   navbar.classList.toggle("scrolled", window.scrollY > 16);
+  updateProgressBar();
+  updateActiveNavLink();
   
   /* EFECTO PARALLAX - INICIO: Fade y blur dinámico en hero */
   const scrollProgress = Math.min(window.scrollY / window.innerHeight, 1);
